@@ -19,8 +19,11 @@ exports.getFontDataByStyle = function (style) {
         content: "",//正文
     };
 
-
-    fontData = findFontData(pictureStyles[style].font);
+    if(pictureStyles[style]){
+        fontData = findFontData(pictureStyles[style].font);
+    }else{
+        fontData = findFontData(pictureStyles[Object.keys(pictureStyles)[0]].font);
+    }
 
     return fontData;
 
