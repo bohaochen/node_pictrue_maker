@@ -1,11 +1,15 @@
 
 const express = require("express");
 const {runApiServer}  = require("./api.js");
+const {getLayoutByData}  = require("./src/boxLayout/getLayoutByData.js");
 
 var app = express();
 
 //运行API服务
 runApiServer(app);
+
+
+getLayoutByData()
 
 
 app.listen("4399", () => {
