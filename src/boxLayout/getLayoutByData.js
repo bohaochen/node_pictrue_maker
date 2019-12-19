@@ -16,14 +16,20 @@ exports.getLayoutByData = function (data) {
     var dataWithStyle = getDataWithStyle(data)
     console.log(dataWithStyle, "styleWithData")
 
-    var should = shouldUserLongPicture(dataWithStyle)
-    console.log(should, "isLong")
+    var userLongPicture = shouldUserLongPicture(dataWithStyle)
+    console.log(userLongPicture, "userLongPicture")
 
-    var bg = getBackgroundByStyle(dataWithStyle.styleName);
-    console.log(bg, "bg")
+    var bg = null;
+    
+    getBackgroundByStyle(dataWithStyle.styleName);
+if(userLongPicture){
+    //長圖結構
+}else{
+    //海報結構
+    bg = getBackgroundByStyle(dataWithStyle.styleName);
+}
+todo
 
-    layouts.layoutsProgram
-    canUserLongPicture(dataWithStyle)
 }
 
 function shouldUserLongPicture(dataWithStyle) {
@@ -43,9 +49,12 @@ function shouldUserLongPicture(dataWithStyle) {
             && addArrLength(dataWithStyle.content)>120){
                 //如果段落大于3，段落内容长度大于120，则使用长构图
             shouldUse = true
+        }else{
+            //如果内容不多不少，則隨機選擇
+            var arr = [false,true]
+            shouldUse = arr[Math.floor(Math.random() * arr.length)]
         }
     }
-
     return shouldUse
 }
 
@@ -53,7 +62,7 @@ function shouldUserLongPicture(dataWithStyle) {
 function addArrLength(arr){
     var num = 0;
     arr.map((item)=>{
-        item.map((item1)=>{
+        item.content.map((item1)=>{
             num += item1.length
             return ""
         })
