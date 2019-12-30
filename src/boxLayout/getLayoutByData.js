@@ -23,12 +23,12 @@ exports.getLayoutByData = function (data) {
     
     getBackgroundByStyle(dataWithStyle.styleName);
 if(userLongPicture){
-    //長圖結構
+    //長圖結構(純色背景或者肌理背景,不用圖片背景)
 }else{
-    //海報結構
+    //海報結構(主要使用圖片背景)
     bg = getBackgroundByStyle(dataWithStyle.styleName);
 }
-todo
+// todo
 
 }
 

@@ -37,6 +37,10 @@ exports.fontStyleObject = {
 }
 
 
+
+//vvvvvvvvv以下全部是素材实体vvvvvvv
+
+
 exports.backgroundStyleList = [
     ["沉稳","自然景观","蓝",3,3,3,"横构图","平铺","天空云彩"]
 ]
